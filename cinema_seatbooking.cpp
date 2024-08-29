@@ -20,8 +20,8 @@ public:
     int selectedY;
     int isSelected=0;
     void reset(){isSelected=0;}
+} s;
 
-}s;
 vector<Seat> selected_seats;
 
  vector<vector<string>> a={{"[ A1 ]","[ A2 ]","  ","[ A3 ]","[ A4 ]","  ","[ A5 ]","[ A6 ]","  ","[ A7 ]","[ A8 ]"},
@@ -31,11 +31,10 @@ vector<Seat> selected_seats;
                     {"[ E1 ]","[ E2 ]","  ","[ E3 ]","[ E4 ]","  ","[ E5 ]","[ E6 ]","  ","[ E7 ]","[ E8 ]"},
                     {"[ F1 ]","[ F2 ]","  ","[ F3 ]","[ F4 ]","  ","[ F5 ]","[ F6 ]","  ","[ F7 ]","[ F8 ]"},
                     {"[ G1 ]","[ G2 ]","  ","[ G3 ]","[ G4 ]","  ","[ G5 ]","[ G6 ]","  ","[ G7 ]","[ G8 ]"}
-
     };
 
 void displayMatrix() {
-    system("cls");  // Clears the console screen
+    system("cls");
 
     for (int i = 0; i < rows; ++i) {
             if(i==0)
@@ -47,7 +46,7 @@ void displayMatrix() {
 
         for (int j = 0; j < cols; ++j) {
             if (i == posY && j == posX) {
-                cout << "\33[100m\33[7m"<<a[i][j]<<"\33[0m";  // Display the current position
+                cout << "\33[100m\33[7m"<<a[i][j]<<"\33[0m";  //to Display the current position
             }
             else {
                     flag=0;
@@ -70,7 +69,6 @@ void displayMatrix() {
         cout<<"\n\n----------------------SCREEN HERE---------------------";
 }
 
-// Function to replace the entire content of array2 in array1 with "1"
 void replaceElements(const  vector< string>& array2) {
     for (int i = 0; i < a.size(); ++i) {
         for (int j = 0; j < a[i].size(); ++j) {
